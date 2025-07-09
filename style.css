@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 70%;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: rgb(21, 24, 29);
+    color: white;
+}
+
+header {
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: #cc77f9;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav a {
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+    color: #cc77f9;
+    border-bottom: 5px solid #cc77f9;
+}
+
+@media (max-width: 995px) {
+    nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #cc77f9;
+        border-bottom: 3px solid #cc77f9;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem;
+        background-color:rgb(21, 24, 29);
+        display: none;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #cc77f9;
+    }
+}
+
+section {
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: rgb(21, 24, 29);
+}
+.home-container p {
+    font-size: 1.2rem; /* Tamanho do texto */
+    color: white; /* Cor do texto */
+}
+
+.home-container h1{
+    font-size: 2.5rem !important;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span {
+    color: #cc77f9;
+}
+
+.home.home-content h3 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home-container{
+    max-width: 500px;
+    text-align: justify;
+}
+
+.home-img {
+    border-radius: 50%;
+}
+
+.home-img img {
+    position: relative;
+    width: 20vw;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #cc77f9;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.home-img img:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #cc77f9;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color:#cc77f9;
+}
+
+.social-icons a:hover {
+    color: rgb(21, 24, 29);
+    transform: scale(1.3) translateY(-5px);
+    background-color:#cc77f9;
+    box-shadow: 0 0 5px #cc77f9;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: rgb(21, 24, 29);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #cc77f9;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #cc77f9;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.03);
+    background-color: #cc77f9;
+    color: rgb(21, 24, 29);
+    box-shadow: 0 0 8px #cc77f9;
+}
+
+.typing-text {
+    font-size: 20px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span {
+    position: relative;
+}
+
+.typing-text span::before {
+    content: "Estudante de ADS";
+    color: #cc77f9;
+    animation: words 20s infinite;
+}
+
+.typing-text span::after {
+    content: "";
+    background-color: rgb(21, 24, 29);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+}
+
+@keyframes words {
+    0%, 20% { content: "Estudante de ADS"; }
+}
+
+@media (max-width: 1000px) {
+    .home {
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 995px) {
+    .home {
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home.home-content h3 {
+        font-size: 2.5rem;
+    }
+
+    .home.home-content h1 {
+        font-size: 5rem;
+    }
+
+    .home-img {
+        width: 70vh;
+        margin-top: 4rem;
+    }
+}
+#formacao-academica {
+    padding: 5rem 9% 5rem;
+    padding-top: 13rem; /* Valor para garantir que a seção não sobreponha a navegação */
+    background-color: rgb(21, 24, 29);
+    color: white;
+    text-align: justify;
+}
+
+#formacao-academica h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #cc77f9;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+#formacao-academica p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+#formacao-academica ul {
+    font-size: 1.2rem;
+    list-style-type: disc;
+    padding-left: 2rem;
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+#formacao-academica ul li {
+    margin-bottom: 1rem;
+}
